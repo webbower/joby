@@ -1,24 +1,35 @@
 {
-  "name": "joby-aviation",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.13"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.13"
-  }
+	"name": "joby-aviation",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"test": "vitest run",
+		"test:dev": "vitest watch",
+		"format": "prettier src vitest.config.ts .prettierrc --write",
+		"format:check": "prettier src vitest.config.ts .prettierrc --check",
+		"verify": "npm run format:check && npm run lint && npm run test"
+	},
+	"dependencies": {
+		"next": "14.2.13",
+		"react": "^18",
+		"react-dom": "^18"
+	},
+	"devDependencies": {
+		"@testing-library/dom": "10.4.0",
+		"@testing-library/react": "16.0.1",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"@vitejs/plugin-react": "4.3.1",
+		"eslint": "^8",
+		"eslint-config-next": "14.2.13",
+		"jsdom": "25.0.0",
+		"prettier": "3.3.3",
+		"typescript": "^5",
+		"vitest": "2.1.1"
+	}
 }
