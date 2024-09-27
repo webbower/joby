@@ -1,0 +1,25 @@
+.root {
+  display: inline-block;
+  font-size: 0.5rem;
+  line-height: 1;
+  padding: 0.25em 1em;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.variant {
+  &-danger {
+    background-color: #F7E0DC;
+    color: #FF0400;
+  }
+  
+  &-warn {
+    background-color: #F6EDDB;
+    color: #CF9600;
+  }
+  
+  &-info {
+    background-color: #DCF0DD;
+    color: #00B900;
+  }
+}

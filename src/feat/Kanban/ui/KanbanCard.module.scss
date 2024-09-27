@@ -1,0 +1,45 @@
+.root {
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: #F3F4F5;
+}
+
+.head {
+  border-bottom: 1px solid #DEE0E4;
+  padding-bottom: 0.5em;
+}
+
+.title {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 0.8em;
+  margin-top: 0.3em;
+  color: #D0D3DB;
+}
+
+.details {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.6em;
+  line-height: 1.5;
+  color: #A5AAB4;
+
+  > * {
+    margin-top: 0.5em;
+    display: flex;
+  }
+}
+
+.detailsLabel {
+  margin-right: 1ch;
+}
+
+.tags {
+  margin-top: 0.5em;
+  font-size: 0.5em;
+  color: #707789;
+}
