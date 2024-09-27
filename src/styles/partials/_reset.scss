@@ -1,0 +1,29 @@
+// border-box ALL THE THINGS
+html {
+  box-sizing: border-box;
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+// Set base font sizing
+html {
+  font-size: 1.125em;
+  font-family: sans-serif;
+}
+
+// Remove default margin on <body>
+body {
+  margin: 0;
+}
+
+// Remove default top/bottom on text content to be overridden in Text components
+h1, h2, h3, h4, h5, h6, p, ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
