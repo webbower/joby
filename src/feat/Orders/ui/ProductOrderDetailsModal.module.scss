@@ -1,0 +1,148 @@
+.root {
+  color: #7B8190;
+  display: grid;
+  grid-template-areas:
+  "order process"
+  "files files";
+  grid-template-columns: 1fr 1fr;
+}
+
+.orderDetailsSection {
+  grid-area: order;
+
+  .sectionTitle {
+    margin-bottom: 30px;
+  }
+}
+
+.orderDetails {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px 80px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.25;
+
+  &Title {
+    font-size: 0.75em;
+    color: #666D80;
+  }
+}
+
+.processDetailsSection {
+  grid-area: process;
+
+  .sectionTitle {
+    margin-bottom: 30px;
+  }
+}
+
+.processDetails {
+  list-style: none;
+  padding-left: 0;
+  
+  li {
+    display: flex;
+
+    + li {
+      margin-top: 20px;
+    }
+  }
+
+  &Title {
+    font-weight: normal;
+    font-size: inherit;
+    flex: 0 0 40%;
+  }
+}
+
+.filesSection {
+  grid-area: files;
+  margin-top: 20px;
+  border-top: 1px solid #D2D5DD;
+  padding-top: 30px;
+  display: grid;
+  grid-template-areas: 
+    "title title title"
+    "filters list list";
+  column-gap: 30px;
+
+  .sectionTitle {
+    grid-area: title;
+  }
+}
+
+.filesFilters {
+  grid-area: filters;
+}
+
+.fileFiltersTitle {
+  font-size: 0.6em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.fileFiltersOptions {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.75em;
+}
+
+.filesList {
+  grid-area: list;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #FFF;
+  border-radius: 16px;
+  
+  > * + * {
+    border-top: 1px solid #CACDD6;
+  }
+}
+
+.fileEntry {
+  display: flex;
+  column-gap: 25px;
+  padding: 10px;
+}
+
+.fileImage {
+  flex: 0 0 auto;
+}
+
+.fileEntryThumbnail {
+  display: block;
+  width: 120px;
+  height: 135px;
+  background-color: #D9DADA;
+  border: 0;
+}
+
+.fileInfo {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-areas:
+    "name date"
+    "desc desc";
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.25;
+  font-size: 0.9em;
+
+  &Title {
+    font-size: 0.8em;
+  }
+  
+  &Name {
+    grid-area: name;
+  }
+
+  &Date {
+    grid-area: date;
+  }
+
+  &Desc {
+    grid-area: desc;
+  }
+}

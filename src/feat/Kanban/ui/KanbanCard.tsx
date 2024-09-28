@@ -1,8 +1,8 @@
 'use client';
 
-import { Chip } from '~/ui/Data/mod';
 import { Button } from '~/ui/Actions/mod';
 import { Priority } from '~/feat/Orders/mod';
+import { PriorityChip } from '~/feat/Orders/mod.ui';
 import { formatDate } from '~/lib/date/mod';
 import { type Entries } from '~/lib/types/mod';
 
@@ -19,33 +19,17 @@ export type KanbanCardProps = {
 	// tags: Array<{
 	//   name: string;
 	// }>
+	onClick?: () => void;
 };
-
-const priorityToChipVariantMapping = {
-	[String(Priority.Critical)]: 'danger',
-	[String(Priority.High)]: 'warn',
-	[String(Priority.Standard)]: 'info',
-} as const;
-
-const priorityToChipLabelMapping = {
-	[String(Priority.Critical)]: 'Critical Path',
-	[String(Priority.High)]: 'High Priority',
-	[String(Priority.Standard)]: 'Standard',
-} as const;
-
-const PriorityChip = ({ priority }: { priority: Priority }) => (
-	<Chip variant={priorityToChipVariantMapping[String(priority)]}>
-		{priorityToChipLabelMapping[String(priority)]}
-	</Chip>
-);
 
 export const KanbanCard = ({
 	title,
 	subtitle,
 	summaryData,
 	// tags = [],
+	onClick = () => {},
 }: KanbanCardProps) => (
-	<article className={css.root}>
+	<article className={css.root} onClick={onClick}>
 		<header className={css.head}>
 			<h3 className={css.title}>{title}</h3>
 			<p className={css.subtitle}>{subtitle}</p>
@@ -71,7 +55,6 @@ export const KanbanCard = ({
 		<div className={css.tags}>
 			<Button
 				variant="text"
-				type="button"
 				onClick={() => {
 					alert('Add a tag');
 				}}

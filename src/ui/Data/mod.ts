@@ -4,4 +4,4 @@
  * @module ui/Data
  */
 
-export { Chip } from './Chip/Chip';
+export { Chip, type ChipProps } from './Chip/Chip';

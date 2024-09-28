@@ -16,9 +16,10 @@ type KanbanCardsGroup = {
 
 export type KanbanBoardProps = {
 	cards?: KanbanCardsGroup[];
+	onItemClick?: () => void;
 };
 
-export const KanbanBoard = ({ cards = [] }: KanbanBoardProps) => (
+export const KanbanBoard = ({ cards = [], onItemClick }: KanbanBoardProps) => (
 	<div className={css.root}>
 		{cards.map(({ id: columnId, title: columnTitle, items }) => (
 			<section key={columnId} className={clsx(css.column)}>
@@ -31,6 +32,7 @@ export const KanbanBoard = ({ cards = [] }: KanbanBoardProps) => (
 							title={item.title}
 							subtitle={item.description}
 							summaryData={getKanbanCardSummaryData(item)}
+							onClick={onItemClick}
 						/>
 					))}
 				</Stack>

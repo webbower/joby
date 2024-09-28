@@ -11,7 +11,18 @@ export type StackProps = {
 	 * The wrapper element to render
 	 * @default 'div'
 	 */
-	as?: 'div' | 'section' | 'article' | 'header' | 'footer' | 'aside' | 'nav' | 'ul' | 'ol' | 'dl';
+	as?:
+		| 'div'
+		| 'section'
+		| 'article'
+		| 'header'
+		| 'footer'
+		| 'aside'
+		| 'nav'
+		| 'ul'
+		| 'ol'
+		| 'dl'
+		| 'menu';
 };
 
 /**

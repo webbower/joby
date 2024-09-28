@@ -1,9 +1,12 @@
 'use client';
 
 import { KanbanBoard } from '~/feat/Kanban/mod.ui';
+import { createKanbanBoardCardsData } from '~/feat/Kanban/mod.dev';
+import { ProductOrderDetailsModal } from '~/feat/Orders/mod.ui';
+import { Priority, ProductOrder } from '~/feat/Orders/mod';
 
 import css from './page.module.scss';
-import { createKanbanBoardCardsData } from '~/feat/Kanban/mod.dev';
+import { useBooleanState } from '~/ui/Hooks/useBooleanState';
 
 const kanbanGroups: Array<[string, number]> = [
 	['Last viewed', 1],
@@ -13,12 +16,28 @@ const kanbanGroups: Array<[string, number]> = [
 	['Done', 6],
 ];
 
-const Home = () => (
-	<div>
-		<div className={css.kanbanWindow}>
-			<KanbanBoard cards={createKanbanBoardCardsData({ groups: kanbanGroups })} />
+const Home = () => {
+	const [modalIsVisible, { on: showModal, off: hideModal }] = useBooleanState();
+
+	return (
+		<div>
+			<div className={css.kanbanWindow}>
+				<KanbanBoard
+					cards={createKanbanBoardCardsData({ groups: kanbanGroups })}
+					onItemClick={showModal}
+				/>
+			</div>
+
+			<ProductOrderDetailsModal
+				isVisible={modalIsVisible}
+				productOrder={ProductOrder({
+					title: 'MO0912345678',
+					priority: Priority.Standard,
+				})}
+				onClose={hideModal}
+			/>
 		</div>
-	</div>
-);
+	);
+};
 
 export default Home;

@@ -3,9 +3,10 @@ import clsx from 'clsx';
 import css from './Button.module.scss';
 
 export type ButtonProps = {
-	variant: 'text' | 'graphic';
+	variant: 'primary' | 'text' | 'icon';
 	type?: 'button' | 'submit';
 	className?: string;
+	pressed?: boolean;
 	children: React.ReactNode;
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 };
@@ -14,6 +15,7 @@ export const Button = ({
 	variant,
 	type = 'button',
 	className,
+	pressed = false,
 	children,
 	onClick = () => {},
 }: ButtonProps) => (
@@ -21,6 +23,7 @@ export const Button = ({
 		type={type}
 		className={clsx(css.root, css[`variant-${variant}`], className)}
 		onClick={onClick}
+		aria-pressed={pressed}
 	>
 		{children}
 	</button>

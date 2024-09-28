@@ -8,6 +8,8 @@ export type ChipProps = {
 	children: string;
 	/** The variant to display */
 	variant: ChipVariant;
+	/** The size of the chip */
+	size?: 'sm' | 'md';
 };
 
 /**
@@ -16,6 +18,6 @@ export type ChipProps = {
  * @param props Component props
  * @returns A Chip component instance
  */
-export const Chip = ({ variant, children }: ChipProps) => (
-	<span className={clsx(css.root, css[`variant-${variant}`])}>{children}</span>
+export const Chip = ({ variant, size = 'sm', children }: ChipProps) => (
+	<span className={clsx(css.root, css[`variant-${variant}`], css[`size-${size}`])}>{children}</span>
 );
