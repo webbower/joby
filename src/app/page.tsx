@@ -1,43 +1,22 @@
 'use client';
 
-import { KanbanBoard } from '~/feat/Kanban/mod.ui';
-import { createKanbanBoardCardsData } from '~/feat/Kanban/mod.dev';
-import { ProductOrderDetailsModal } from '~/feat/Orders/mod.ui';
-import { Priority, ProductOrder } from '~/feat/Orders/mod';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 
-import css from './page.module.scss';
-import { useBooleanState } from '~/ui/Hooks/useBooleanState';
+import { Modals } from '~/feat/Modals/mod';
+import { selectIsModalVisible } from '~/feat/State/mod.selectors';
+import { AppState } from '~/feat/State/mod';
 
-const kanbanGroups: Array<[string, number]> = [
-	['Last viewed', 1],
-	['To Do', 5],
-	['In Progress', 2],
-	['In Review', 4],
-	['Done', 6],
-];
+import { Home } from '~/screens/Home/Home';
+import { closeModal, showModal } from '~/feat/State/mod.actions';
 
-const Home = () => {
-	const [modalIsVisible, { on: showModal, off: hideModal }] = useBooleanState();
+const mapStateToProps = (state: AppState) => ({
+	productDetailsModalIsVisible: selectIsModalVisible(Modals.ProductDetail)(state),
+});
 
-	return (
-		<div>
-			<div className={css.kanbanWindow}>
-				<KanbanBoard
-					cards={createKanbanBoardCardsData({ groups: kanbanGroups })}
-					onItemClick={showModal}
-				/>
-			</div>
-
-			<ProductOrderDetailsModal
-				isVisible={modalIsVisible}
-				productOrder={ProductOrder({
-					title: 'MO0912345678',
-					priority: Priority.Standard,
-				})}
-				onClose={hideModal}
-			/>
-		</div>
-	);
+const mapDispatchToProps = {
+	showModal,
+	closeModal,
 };
 
-export default Home;
+export default compose(connect(mapStateToProps, mapDispatchToProps))(Home);

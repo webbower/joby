@@ -35,3 +35,22 @@ export type Entries<V = unknown, K = string> = Array<[K, V]>;
 export type PartialExcept<T, RequiredKeys extends keyof T> = Partial<Omit<T, RequiredKeys>> & {
 	[K in RequiredKeys]: T[K];
 };
+
+/**
+ * Given the `typeof` a JS object or array/tuple const, return a union type of all the values of the object or array
+ *
+ * <code>
+ * // `MyEnum` can be used as a value or type
+ * const MyEnum = {
+ *   ONE: 'one',
+ *   TWO: 'two',
+ *   THREE: 'three',
+ * } as const;
+ * type MyEnum = Values<typeof MyEnum>; // 'one' | 'two' | 'three'
+ *
+ * // `MyUnion` can be used as a value or type
+ * const MyUnion = ['one', 'two', 'three'] as const; // `as const` is required
+ * type MyUnion = Values<typeof MyUnion>; // 'one' | 'two' | 'three'
+ * </code>
+ */
+export type Values<T> = T extends readonly (infer U)[] ? U : T extends Record<string, any> ? T[keyof T] : never;
