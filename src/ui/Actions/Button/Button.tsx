@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import css from './Button.module.scss';
 
 export type ButtonProps = {
-	variant: 'primary' | 'text' | 'icon';
+	variant: 'primary' | 'text' | 'graphic';
 	type?: 'button' | 'submit';
 	className?: string;
 	pressed?: boolean;

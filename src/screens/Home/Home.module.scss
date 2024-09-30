@@ -1,5 +1,24 @@
+.appsMenu {
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 16px;
+	padding: 10px 5px;
+	border-radius: 8px;
+	position: absolute;
+	z-index: 1;
+	top: 15px;
+	left: 5px;
+	bottom: 15px;
+}
+
 .kanbanWindow {
 	background-color: rgba(0, 0, 0, 0.5);
 	border-radius: 16px;
 	padding: 10px 20px;
+	position: absolute;
+	z-index: 1;
+	top: 100px;
+	bottom: 20px;
+	right: 20px;
+	width: 100%;
+	max-width: 90vw;
 }

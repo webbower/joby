@@ -1,0 +1,47 @@
+// .root {}
+
+.menu {
+  list-style: none;
+	padding-left: 0;
+  margin: 0;
+  display: flex;
+}
+
+.item {
+  padding: 4px;
+  border-radius: 4px;
+  transition: ease-in-out 0.2s background-color;
+
+  &.active,
+  &:hover {
+    background-color: #FFF;
+  }
+  
+  img, svg {
+    display: block;
+  }
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.orientation- {
+  &vertical {
+    width: fit-content;
+
+    .menu {
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .item {
+      + .item {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  // TODO Implement
+  // &horizontal {}
+}

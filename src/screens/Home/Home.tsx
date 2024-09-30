@@ -3,6 +3,7 @@ import { createKanbanBoardCardsData } from '~/feat/Kanban/mod.dev';
 import { ProductOrderDetailsModal } from '~/feat/Orders/mod.ui';
 import { Priority, ProductOrder } from '~/feat/Orders/mod';
 import { Modals } from '~/feat/Modals/mod';
+import { MenuBar, MenuBarAction, MenuBarSpacer } from '~/ui/Layout/mod';
 
 import css from './Home.module.scss';
 
@@ -21,7 +22,17 @@ type HomeProps = {
 };
 
 export const Home = ({ productDetailsModalIsVisible, showModal, closeModal }: HomeProps) => (
-	<div>
+	<>
+		<MenuBar label="App Menu" className={css.appsMenu}>
+			<MenuBarAction action="#" label="Dashboard" icon="joby" />
+			<MenuBarAction action="#" label="Home" icon="home" />
+			<MenuBarAction action="#" label="User" icon="user" />
+			<MenuBarAction action="#" label="Settings" icon="settings" />
+			<MenuBarAction active action="#" label="Product Order" icon="edit" />
+			<MenuBarSpacer />
+			<MenuBarAction action="#" label="Help" icon="help" />
+		</MenuBar>
+
 		<div className={css.kanbanWindow}>
 			<KanbanBoard
 				cards={createKanbanBoardCardsData({ groups: kanbanGroups })}
@@ -37,5 +48,5 @@ export const Home = ({ productDetailsModalIsVisible, showModal, closeModal }: Ho
 			})}
 			onClose={closeModal}
 		/>
-	</div>
+	</>
 );

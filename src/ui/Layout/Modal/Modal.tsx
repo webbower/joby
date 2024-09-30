@@ -42,7 +42,7 @@ export const Modal = ({ isVisible = false, title, children, onClose }: ModalProp
 						<div className={css.wrapper}>
 							<header className={css.head}>
 								<h2 className={css.title}>{title}</h2>
-								<Button variant="icon" className={css.closeButton} onClick={onClose}>
+								<Button variant="graphic" className={css.closeButton} onClick={onClose}>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 18 18"

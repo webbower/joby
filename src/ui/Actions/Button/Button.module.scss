@@ -1,71 +1,74 @@
 .root {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
-  font-size: inherit;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	font-size: inherit;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 // NOTE Example of setting common styles for multiple variants
 .variant-primary,
 .variant-secondary {
-  display: block;
-  width: 100%;
-  border-radius: 8px;
-  border: 0;
-  font-size: 1em;
-  font-weight: bold;
-  padding: 10px 15px;
+	display: block;
+	width: 100%;
+	border-radius: 8px;
+	border: 0;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 10px 15px;
 }
 
 .variant-primary {
-  color: #353D48;
-  background-color: #FFF;
+	color: #353d48;
+	background-color: #fff;
 
-  &:hover {
-    background-color: #006BD1;
-    color: #FFF;
-  }
-  
-  &:focus {
-    outline: 2px solid #006BD1;
-  }
+	&:hover {
+		background-color: #006bd1;
+		color: #fff;
+	}
 
-  &[aria-pressed="true"] {
-    background-color: #006BD1;
-    color: #FFF;
+	&:focus {
+		outline: 2px solid #006bd1;
+	}
 
-    &:focus {
-      outline: 0;
-    }
-  }
+	&[aria-pressed='true'] {
+		background-color: #006bd1;
+		color: #fff;
+
+		&:focus {
+			outline: 0;
+		}
+	}
 }
 
-.variant-text {
-  background-color: transparent;
-  border: 0;
-  font-weight: bold;
-  color: inherit;
-}
+.variant- {
+	&text {
+		background-color: transparent;
+		border: 0;
+		font-weight: bold;
+		color: inherit;
+	}
 
-.variant-icon {
-  background-color: #60687C;
-  stroke: currentColor;
-  stroke-width: 0.15em;
-  border-radius: 50%;
-  padding: 6px;
-  border: 0;
+  &graphic {
+		background-color: #60687c;
+		stroke: currentColor;
+		stroke-width: 0.15em;
+		border-radius: 50%;
+		padding: 6px;
+		border: 0;
 
-  > svg {
-    display: block;
-  }
+		img,
+		svg {
+			display: block;
+		}
+	}
 }
