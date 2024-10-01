@@ -12,6 +12,9 @@
   - ESLint
   - Prettier
 - Clearly defined modules with public exports
+- Root-level dependency injection
+- Clean separation of business logic and UI
+- Easily testable modules
 
 ### Folder Structure
 - `src/` - Source root
