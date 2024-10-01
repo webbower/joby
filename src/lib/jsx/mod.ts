@@ -4,13 +4,14 @@
  * @module lib/jsx
  */
 
+const UNKNOWN_COMPONENT_NAME = 'UnknownComponent';
+
 /**
  * Get the display name of a React component
  *
  * @param Component A React component or string native component name
  * @return The name of the component or empty string if no component is passed
  */
-const UNKNOWN_COMPONENT_NAME = 'UnknownComponent';
 export const getComponentName = (Component: React.ComponentType | string): string => {
 	// Handle missing data cases
 	if (Component === '') {
@@ -25,9 +26,9 @@ export const getComponentName = (Component: React.ComponentType | string): strin
 /**
  * Create a wrapped component name for use with HOCs
  *
- * @param {ReactComponent|string} BaseComponent The component to be wrapped
- * @param {ReactComponent|string} HocComponent The name of the wrapping component
- * @return {string} A wrapped name generated from the 2 component names
+ * @param BaseComponent The component to be wrapped
+ * @param HocComponent The name of the wrapping component
+ * @return A wrapped name generated from the 2 component names
  */
 export const wrapComponentName = (
 	BaseComponent: React.ComponentType | string,
