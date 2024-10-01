@@ -32,7 +32,7 @@ export const showProductOrderInModal = createAction(
 	(id: NonNullable<State['displayed']>) => ({ payload: { id } }),
 );
 
-///////// Selector /////////
+///////// Selectors /////////
 /**
  * Get the currently displayed productOrder
  *

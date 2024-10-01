@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
 });
 
 export type AppState = {
-	[modals.sliceName]: modals.ModalState;
+	[modals.sliceName]: modals.State;
 	[kanban.sliceName]: kanban.State;
 	[productOrders.sliceName]: productOrders.State;
 };

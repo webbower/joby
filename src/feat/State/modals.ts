@@ -2,21 +2,22 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 import { Modals } from '~/feat/Modals/mod';
 import { last } from '~/lib/arr/mod';
 
-export type ModalState = {
+export type State = {
 	visible: Modals[];
 };
 
 export const sliceName = 'modals';
+const actionName = (name: string) => `${sliceName}/${name}`;
 
-export const createInitialState = ({ visible = [] }: Partial<ModalState> = {}): ModalState => ({
+export const createInitialState = ({ visible = [] }: Partial<State> = {}): State => ({
 	visible,
 });
 
 ///////// Action Creators /////////
-export const showModal = createAction('modals/SHOW', (id: Modals) => ({ payload: { id } }));
-export const closeModal = createAction('modals/CLOSE');
+export const showModal = createAction(actionName('SHOW'), (id: Modals) => ({ payload: { id } }));
+export const closeModal = createAction(actionName('CLOSE'));
 
-///////// Selector /////////
+///////// Selectors /////////
 /**
  * Check if a specific modal is visible
  *
@@ -25,7 +26,7 @@ export const closeModal = createAction('modals/CLOSE');
  */
 export const selectIsModalVisible =
 	(id: Modals) =>
-	(state: ModalState): boolean =>
+	(state: State): boolean =>
 		last(state.visible) === id;
 
 ///////// Reducer /////////

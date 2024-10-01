@@ -26,7 +26,7 @@ export const successLoadingKanbanCards = createAction(
 );
 // TODO Add errorLoadingKanbanCards
 
-///////// Selector /////////
+///////// Selectors /////////
 /**
  * Get all the Kanban Cards
  *

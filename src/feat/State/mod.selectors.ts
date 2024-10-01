@@ -10,7 +10,7 @@ import * as modals from './modals';
 import * as kanban from './kanban';
 import * as productOrders from './productOrders';
 
-const selectModals = (state: AppState): modals.ModalState => state[modals.sliceName];
+const selectModals = (state: AppState): modals.State => state[modals.sliceName];
 export const selectIsModalVisible = (id: Modals) =>
 	createSelector(selectModals, modals.selectIsModalVisible(id));
 
