@@ -23,6 +23,8 @@ type HomeProps = {
 
 export const Home = ({ productDetailsModalIsVisible, showModal, closeModal }: HomeProps) => (
 	<>
+		<h1 className={css.pageTitle}>Order Overview</h1>
+
 		<MenuBar label="App Menu" className={css.appsMenu}>
 			<MenuBarAction action="#" label="Dashboard" icon="joby" />
 			<MenuBarAction action="#" label="Home" icon="home" />
