@@ -1,4 +1,4 @@
-import { type KanbanBoardProps } from '../ui/KanbanBoard';
+import { type KanbanCardsGroup } from '../ui/KanbanBoard';
 import { ProductOrder, Priority } from '~/feat/Orders/mod';
 
 /**
@@ -29,10 +29,10 @@ type CreateKanbanBoardDataConfig = {
  */
 export const createKanbanBoardCardsData = ({
 	groups,
-}: CreateKanbanBoardDataConfig): KanbanBoardProps['cards'] => {
+}: CreateKanbanBoardDataConfig): KanbanCardsGroup[] => {
 	const priorityGenerator = getNextPriorityMember();
 	let id = 0;
-	return groups.reduce<NonNullable<KanbanBoardProps['cards']>>((gs, [title, cardCount], i) => {
+	return groups.reduce<KanbanCardsGroup[]>((gs, [title, cardCount], i) => {
 		const items = Array.from({ length: cardCount }, () =>
 			ProductOrder({
 				id: String(id++),

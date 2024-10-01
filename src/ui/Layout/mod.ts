@@ -3,8 +3,9 @@
  *
  * @module ui/Layout
  */
-export { MenuBar } from '../Layout/MenuBar/MenuBar';
-export { MenuBarAction } from '../Layout/MenuBar/MenuBarAction';
-export { MenuBarSpacer } from '../Layout/MenuBar/MenuBarSpacer';
+export { LoadingText } from './Loading/LoadingText';
+export { MenuBar } from './MenuBar/MenuBar';
+export { MenuBarAction } from './MenuBar/MenuBarAction';
+export { MenuBarSpacer } from './MenuBar/MenuBarSpacer';
 export { Modal } from './Modal/Modal';
 export { Stack } from './Stack/Stack';
